@@ -30,7 +30,7 @@ const MainLayout = () => {
                     <NavLink title={"Contact"} href={"/contact"} />
                 </Stack>
             </Stack>
-            <Stack height="calc(100vh - 80px - 70px - 72px - 16px)" padding={2}>
+            <Stack minHeight="calc(100vh - 80px - 70px - 72px - 16px)" padding={2}>
                 <Outlet />
             </Stack>
             <Stack
