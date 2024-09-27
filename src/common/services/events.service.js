@@ -1,9 +1,9 @@
 import api from "./api";
 import { handleError } from "../utils/utils";
 
-const getBands = async () => {
+const getEvents = async () => {
     try {
-        const response = await api.get("bands/");
+        const response = await api.get("events/");
         return {
             status: true,
             data: response.data,
@@ -13,8 +13,8 @@ const getBands = async () => {
     }
 };
 
-const BandsService = {
-    getBands,
+const EventsService = {
+    getEvents,
 };
 
-export default BandsService;
+export default EventsService;

@@ -9,7 +9,7 @@ import Stack from "@mui/material/Stack";
 // Components
 import Typography from "../../common/components/Typography";
 
-const BandBlock = ({ band }) => {
+const EventBlock = ({ event }) => {
     return (
         <Card
             sx={{
@@ -23,20 +23,28 @@ const BandBlock = ({ band }) => {
             }}
         >
             <Stack spacing={1}>
-                <CardMedia component="img" height="200px" image={band.photo} alt={band.name} />
                 <Stack padding={1}>
                     <Typography variant={"h5"} bold align="center">
-                        {band.name}
+                        {event.name}
                     </Typography>
                     <Typography variant={"body1"} align="center">
-                        {band.description}
+                        {event.description}
                     </Typography>
-                    <Stack direction={"row"} spacing={3} alignItems={"center"} alignSelf={"center"}>
-                        <Typography variant={"body1"} align="center">
-                            Genre: <strong>{band.genre}</strong>
+                    <Typography variant={"h6"} align="center" color="red">
+                        Event Details
+                    </Typography>
+                    <Stack paddingX={1} alignSelf={"center"}>
+                        <Typography variant={"body1"}>
+                            Location: <strong>{event.location}</strong>
                         </Typography>
-                        <Typography variant={"body1"} align="center">
-                            Year: <strong>{band.year_formed}</strong>
+                        <Typography variant={"body1"}>
+                            Price: <strong>{event.price}</strong>
+                        </Typography>
+                        <Typography variant={"body1"}>
+                            Date and Time:{" "}
+                            <strong>
+                                {format(new Date(event.date), "dd-MM-YYY") + " @ " + event.time}
+                            </strong>
                         </Typography>
                     </Stack>
                 </Stack>
@@ -45,4 +53,4 @@ const BandBlock = ({ band }) => {
     );
 };
 
-export default BandBlock;
+export default EventBlock;
