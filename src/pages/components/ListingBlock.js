@@ -9,7 +9,7 @@ import Stack from "@mui/material/Stack";
 // Components
 import Typography from "../../common/components/Typography";
 
-const EventBlock = ({ event }) => {
+const ListingBlock = ({ listing }) => {
     return (
         <Card
             sx={{
@@ -23,25 +23,27 @@ const EventBlock = ({ event }) => {
             }}
         >
             <Stack spacing={1}>
+                <CardMedia
+                    component="img"
+                    height="200px"
+                    image={listing.photo}
+                    alt={listing.name}
+                    sx={{ objectFit: "cover" }}
+                />
                 <Stack padding={1}>
                     <Typography variant={"h5"} bold align="center">
-                        {event.name}
+                        {listing.name}
                     </Typography>
                     <Typography variant={"body1"} align="center">
-                        {event.description}
+                        {listing.description}
                     </Typography>
-                    <Typography variant={"h6"} align="center" color="red">
-                        Event Details
-                    </Typography>
-                    <Stack paddingX={1} alignSelf={"center"}>
-                        <Typography variant={"body1"}>
-                            Location: <strong>{event.location}</strong>
+                    <Stack direction={"row"} spacing={3} alignItems={"center"} alignSelf={"center"}>
+                        <Typography variant={"body1"} align="center">
+                            Price: <strong>{listing.price}</strong>
                         </Typography>
-                        <Typography variant={"body1"}>
-                            Price: <strong>{event.price}</strong>
-                        </Typography>
-                        <Typography variant={"body1"}>
-                            Date and Time: <strong>{event.date + " @ " + event.time}</strong>
+                        <Typography variant={"body1"} align="center">
+                            Posted:{" "}
+                            <strong>{format(new Date(listing.created_at), "dd-MM-yyyy")}</strong>
                         </Typography>
                     </Stack>
                 </Stack>
@@ -50,4 +52,4 @@ const EventBlock = ({ event }) => {
     );
 };
 
-export default EventBlock;
+export default ListingBlock;

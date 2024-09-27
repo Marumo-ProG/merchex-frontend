@@ -13,7 +13,7 @@ const BandBlock = ({ band }) => {
     return (
         <Card
             sx={{
-                width: 400,
+                width: "100%",
                 height: "auto",
                 boxShadow: "none",
                 border: "1px solid #999",
@@ -23,7 +23,13 @@ const BandBlock = ({ band }) => {
             }}
         >
             <Stack spacing={1}>
-                <CardMedia component="img" height="200px" image={band.photo} alt={band.name} />
+                <CardMedia
+                    component="img"
+                    height="200px"
+                    image={band.photo}
+                    alt={band.name}
+                    sx={{ objectFit: "cover" }}
+                />
                 <Stack padding={1}>
                     <Typography variant={"h5"} bold align="center">
                         {band.name}
