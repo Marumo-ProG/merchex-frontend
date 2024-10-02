@@ -80,8 +80,35 @@ const EventsDetails = () => {
                 </Stack>
             </Stack>
 
-            <PageTitle title={"Bands"} />
-            <Stack width={500}>{!eventLoading && <BandBlock band={event.band} />}</Stack>
+            <PageTitle title={"Included"} />
+            <Stack direction={"row"} spacing={3}>
+                <Stack width={"100%"} spacing={2}>
+                    <Typography variant={"h4"} align="center">
+                        Band
+                    </Typography>
+                    {!eventLoading && <BandBlock band={event.band} />}
+                </Stack>
+                <Stack width={"100%"} spacing={2}>
+                    <Typography variant={"h4"} align="center">
+                        Listings
+                    </Typography>
+                    <Stack width={400}>
+                        {eventLoading
+                            ? Array.from({ length: 3 }).map((_, index) => (
+                                  <Skeleton key={index} variant="rectangular" height={400} />
+                              ))
+                            : event.listings.map((listing) => (
+                                  <ListingBlock
+                                      key={listing.id}
+                                      listing={{
+                                          ...listing,
+                                          photo: process.env.REACT_APP_BASE_URL + listing.photo,
+                                      }}
+                                  />
+                              ))}
+                    </Stack>
+                </Stack>
+            </Stack>
         </Stack>
     );
 };
