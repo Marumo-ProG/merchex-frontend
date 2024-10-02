@@ -12,9 +12,21 @@ const getEvents = async () => {
         return handleError(error);
     }
 };
+const getEventDetails = async (id) => {
+    try {
+        const response = await api.get(`event-details/${id}/`);
+        return {
+            status: true,
+            data: response.data,
+        };
+    } catch (error) {
+        return handleError(error);
+    }
+};
 
 const EventsService = {
     getEvents,
+    getEventDetails,
 };
 
 export default EventsService;

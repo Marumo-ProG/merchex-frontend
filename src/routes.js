@@ -10,6 +10,7 @@ import MainLayout from "./common/layout/MainLayout";
 // Pages
 const Home = lazy(() => import("./pages/overview"));
 const Events = lazy(() => import("./pages/events"));
+const EventsDetails = lazy(() => import("./pages/EventsDetails"));
 
 const AppRoutes = () => {
     return (
@@ -29,6 +30,14 @@ const AppRoutes = () => {
                         element={
                             <Suspense fallback={null}>
                                 <Events />
+                            </Suspense>
+                        }
+                    />
+                    <Route
+                        path="events/:id"
+                        element={
+                            <Suspense fallback={null}>
+                                <EventsDetails />
                             </Suspense>
                         }
                     />
