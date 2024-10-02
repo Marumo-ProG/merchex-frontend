@@ -92,7 +92,7 @@ const EventsDetails = () => {
                     <Typography variant={"h4"} align="center">
                         Listings
                     </Typography>
-                    <Stack width={400}>
+                    <Stack width={"50%"}>
                         {eventLoading
                             ? Array.from({ length: 3 }).map((_, index) => (
                                   <Skeleton key={index} variant="rectangular" height={400} />
