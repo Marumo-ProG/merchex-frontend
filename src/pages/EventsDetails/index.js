@@ -82,9 +82,7 @@ const EventsDetails = () => {
             </Stack>
 
             <PageTitle title={"Bands"} />
-            <Stack width={500}>
-                <BandBlock band={event?.band} />
-            </Stack>
+            <Stack width={500}>{!eventLoading && <BandBlock band={event.band} />}</Stack>
         </Stack>
     );
 };
