@@ -53,10 +53,9 @@ const EventsDetails = () => {
             <Stack direction="row" alignItems={"center"} spacing={3}>
                 <CardMedia
                     component="img"
-                    height="200px"
                     src={event?.band.photo}
                     alt={event?.name}
-                    sx={{ objectFit: "cover", height: 300, width: 300 }}
+                    sx={{ objectFit: "cover", height: 450, width: 450 }}
                 />
                 <Stack spacing={2} flex={1}>
                     <Typography
