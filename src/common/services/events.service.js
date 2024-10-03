@@ -24,9 +24,22 @@ const getEventDetails = async (id) => {
     }
 };
 
+const addEvent = async (data) => {
+    try {
+        const response = await api.post(`events/`, data);
+        return {
+            status: true,
+            data: response.data,
+        };
+    } catch (error) {
+        return handleError(error);
+    }
+};
+
 const EventsService = {
     getEvents,
     getEventDetails,
+    addEvent,
 };
 
 export default EventsService;
