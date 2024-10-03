@@ -130,11 +130,14 @@ const AddEventModal = ({ open, handleClose, handleAddEvent, bands }) => {
                             name="band"
                             control={control}
                             render={({ field, fieldState: { error } }) => (
-                                <FormControl fullWidth label={"Band *"}>
+                                <FormControl fullWidth>
+                                    <label id="band">Band *</label>
                                     <Select
                                         {...field}
                                         error={!!error}
                                         placeholder="Band *"
+                                        label="Band *"
+                                        labelId="band"
                                         variant="outlined"
                                         fullWidth
                                     >
@@ -147,6 +150,9 @@ const AddEventModal = ({ open, handleClose, handleAddEvent, bands }) => {
                                 </FormControl>
                             )}
                         />
+                        <Button variant="contained" color="info" fullWidth>
+                            Login to Add Listings
+                        </Button>
                     </Stack>
                     <Stack direction="row" spacing={2} justifyContent={"flex-end"}>
                         <Button variant="contained" color="warning" onClick={handleClose}>
