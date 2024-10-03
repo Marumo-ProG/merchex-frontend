@@ -20,7 +20,7 @@ const MainLayout = () => {
                 sx={{ background: "black" }}
                 paddingX={2}
             >
-                <Typography color={"white"} bold={true} variant={"h6"}>
+                <Typography sx={{ fontFamily: "cursive", color: "white" }} variant={"h3"}>
                     Merchex trading
                 </Typography>
                 <Stack direction="row" spacing={2} alignItems={"center"}>

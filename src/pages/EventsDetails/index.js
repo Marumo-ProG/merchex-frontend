@@ -15,6 +15,7 @@ import Stack from "@mui/material/Stack";
 import Grid2 from "@mui/material/Grid2";
 import Skeleton from "@mui/material/Skeleton";
 import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
 
 // Components
 import Typography from "../../common/components/Typography";
@@ -30,6 +31,7 @@ import LocationIcon from "@mui/icons-material/FmdGood";
 import InsertInvitationIcon from "@mui/icons-material/InsertInvitation";
 import WatchIcon from "@mui/icons-material/Watch";
 import BookOnlineIcon from "@mui/icons-material/BookOnline";
+import ChevronRight from "@mui/icons-material/ChevronRight";
 
 const EventsDetails = () => {
     const { id } = useParams();
@@ -46,6 +48,11 @@ const EventsDetails = () => {
             setEvent(data);
         }
         setEventLoading(false);
+    };
+
+    const handleInterested = () => {
+        // make a user api call to add this event on the list of event they are interested in
+        console.log("Interested >>>");
     };
     return (
         <Stack spacing={3} flex={1}>
@@ -77,6 +84,14 @@ const EventsDetails = () => {
                         <EventTag Icon={WatchIcon} text={event?.time} color={"red"} />
                     </Stack>
                     <EventTag Icon={BookOnlineIcon} text={"R " + event?.price} color={"red"} />
+                    <Button
+                        variant="contained"
+                        sx={{ backgroundColor: "black", color: "white" }}
+                        endIcon={<ChevronRight sx={{ fontSize: 24, color: "white" }} />}
+                        onClick={handleInterested}
+                    >
+                        Interested
+                    </Button>
                 </Stack>
             </Stack>
 
