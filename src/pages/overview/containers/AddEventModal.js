@@ -9,18 +9,12 @@ import { useForm, Controller } from "react-hook-form";
 // MUI
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
-import DialogActions from "@mui/material/DialogActions";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
-
-// Components
-import Typography from "../../../common/components/Typography";
-import { Form } from "react-router-dom";
 
 const AddEventModal = ({ open, handleClose, handleAddEvent, bands }) => {
     const { handleSubmit, control } = useForm();
