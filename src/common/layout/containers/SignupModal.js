@@ -16,7 +16,7 @@ const SignupModal = ({ open, handleClose }) => {
     };
     return (
         <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
-            <DialogTitle>Login</DialogTitle>
+            <DialogTitle>Register</DialogTitle>
 
             <form onSubmit={handleSubmit(handleSignup)}>
                 <Stack spacing={2} padding={2}>
